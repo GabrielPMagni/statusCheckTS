@@ -9,7 +9,7 @@ export class Status extends Requester {
 
     async getStatus() {
         const response = await super.get();
-        if (response.status) {
+        if (response && response.status) {
             return response.status;
         }
         throw new Error(`Erro ao requisitar código de status de ${this.targetDomain}`);

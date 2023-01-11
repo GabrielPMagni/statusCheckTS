@@ -13,54 +13,40 @@ export default class Requester {
         this.targetDomain = targetDomain;
     }
 
+    handleRequestError(err: AxiosError) {
+        console.log(err);
+        this.lastErrorCode = err.code;
+        throw new Error(this.getTranslatedLastError())
+    }
+
     async get() {
         return axios.get(this.targetDomain).then((result: AxiosResponse) => {
             return result;
-        }).catch((err: AxiosError) => {
-            console.log(err);
-            this.lastErrorCode = err.code;
-            throw new Error(this.getTranslatedLastError())
-        })
+        }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
     async post() {
         return axios.post(this.targetDomain).then((result: AxiosResponse) => {
             return result;
-        }).catch((err: AxiosError) => {
-            console.log(err);
-            this.lastErrorCode = err.code;
-            throw new Error(this.getTranslatedLastError())
-        })
+        }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
     async put() {
         return axios.put(this.targetDomain).then((result: AxiosResponse) => {
             return result;
-        }).catch((err: AxiosError) => {
-            console.log(err);
-            this.lastErrorCode = err.code;
-            throw new Error(this.getTranslatedLastError())
-        })
+        }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
     async delete() {
         return axios.delete(this.targetDomain).then((result: AxiosResponse) => {
             return result;
-        }).catch((err: AxiosError) => {
-            console.log(err);
-            this.lastErrorCode = err.code;
-            throw new Error(this.getTranslatedLastError())
-        })
+        }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
     async patch() {
         return axios.patch(this.targetDomain).then((result: AxiosResponse) => {
             return result;
-        }).catch((err: AxiosError) => {
-            console.log(err);
-            this.lastErrorCode = err.code;
-            throw new Error(this.getTranslatedLastError())
-        })
+        }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
     getTranslatedLastError() {

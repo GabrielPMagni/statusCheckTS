@@ -6,3 +6,8 @@
 !tsconfig.json
 !.env-sample
 !readme.md
+!.dockerignore
+!nginx/
+!nginx/*
+!docker-compose.yml
+!Dockerfile

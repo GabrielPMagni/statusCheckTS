@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+    nodeserver:
+        build:
+            context: ./
+        ports:
+            - "${EXECUTION_PORT}:${EXECUTION_PORT}"
+    nginx:
+        restart: always
+        build:
+            context: ./nginx
+        ports:
+            - "80:80"
+    db:
+      image: mysql:8
+      restart: always
+      environment:
+        MYSQL_DATABASE: 'db'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+        MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      ports:
+        - '3550:3306'
+      expose:
+        - '3306'
+      volumes:
+        - ${DATABASE_SHARED_VOLUME}:/var/lib/mysql

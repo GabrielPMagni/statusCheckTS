@@ -13,7 +13,7 @@ router.get(`/:protocol/:target`, async (req, res) => {
         const target = `${req.params.protocol}://${req.params.target}` || '';
         
         const status = await new Status(target).getStatus();
-        if (status === 200) {
+        if (status >= 200 && status < 400) {
             res.status(status).json({ result: true, message: i18n.operational });
         } else {
             res.status(status).json({ result: false, message: `${i18n.requestErrorCode} ${status}`});

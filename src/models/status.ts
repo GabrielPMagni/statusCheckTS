@@ -8,7 +8,7 @@ export class Status extends Requester {
     }
 
     async getStatus() {
-        const response = await super.get()
+        const response = await super.get();
         if (response.status) {
             return response.status;
         }

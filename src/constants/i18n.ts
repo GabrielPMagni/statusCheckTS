@@ -2,8 +2,12 @@ import { I18nResolver } from "i18n-ts"
 
 const ptBR = {
     operational: "Operando normalmente",
-    requestErrorCode: "Erro na requisição, código: ",
-    invalidRequest: "Requisição inválida"
+    requestErrorCode: "Erro na requisição, código",
+    invalidRequest: "Requisição inválida",
+    unexpectedError: "Erro inesperado",
+    httpErrors: [
+        { key: "ENOTFOUND", value: ": Endereço não encontrado" }
+    ]
 }
 
 const strings = {

@@ -1,11 +1,15 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { i18n } from "../constants/i18n";
+import { isValidURL } from "../constants/typeChecking";
 
 export default class Requester {
     targetDomain: string;
     private lastErrorCode: string | undefined;
 
     constructor(targetDomain: string) {
+        if (!isValidURL(targetDomain)) {
+            throw new Error(i18n.invalidURL);
+        }
         this.targetDomain = targetDomain;
     }
 

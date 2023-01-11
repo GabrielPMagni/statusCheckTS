@@ -5,6 +5,7 @@ const ptBR = {
     requestErrorCode: "Erro na requisição, código",
     invalidRequest: "Requisição inválida",
     unexpectedError: "Erro inesperado",
+    invalidURL: "URL inválida",
     httpErrors: [
         { key: "ENOTFOUND", value: ": Endereço não encontrado" }
     ]

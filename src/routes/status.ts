@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 router.get(`/:protocol/:target`, async (req, res) => {
     try {
-        const target = `${req.params.protocol}://${req.params.target}` as string || '';
+        const target = `${req.params.protocol}://${req.params.target}` || '';
         
         const status = await new Status(target).getStatus();
         if (status === 200) {

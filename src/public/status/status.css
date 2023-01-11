@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Prompt&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inputHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 24px;
+}
+
+input {
+    text-align: center;
+}
+
+button {
+    font-size: 20px;
+}
+
+#loggingHolder {
+    width: 80%;
+}
+
+textarea {
+    text-align: center;
+    resize: none;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    font-size: 16px;
+    border: none;
+}

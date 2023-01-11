@@ -1,16 +1,17 @@
 import { Router } from "express";
 import { Status } from "../models/status";
 import { i18n } from "../constants/i18n";
+import path from "path";
 
 const router = Router();
 
 router.get("/", (req, res) => {
-    res.status(400).json({ result: false, message: i18n.invalidRequest })
+    res.status(200).sendFile("/views/status/status.html", { root: path.dirname(__dirname) });
 })
 
 router.get(`/:protocol/:target`, async (req, res) => {
     try {
-        const target = `${req.params.protocol}://${req.params.target}` || '';
+        const target = `${req.params.protocol}://${req.params.target}`;
         
         const status = await new Status(target).getStatus();
         if (status >= 200 && status < 400) {

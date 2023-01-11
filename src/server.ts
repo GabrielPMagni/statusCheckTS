@@ -8,6 +8,7 @@ dotenv.config()
 const app = express();
 const port = process.env.EXECUTION_PORT || 3000;
 
+app.use("/public", express.static(`${__dirname}/public`));
 app.use("/status", status);
 app.use("/", index);
 

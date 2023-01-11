@@ -4,10 +4,11 @@ const ptBR = {
     operational: "Operando normalmente",
     requestErrorCode: "Erro na requisição, código",
     invalidRequest: "Requisição inválida",
-    unexpectedError: "Erro inesperado",
+    unexpectedError: "Erro",
     invalidURL: "URL inválida",
     httpErrors: [
-        { key: "ENOTFOUND", value: ": Endereço não encontrado" }
+        { key: "ENOTFOUND", value: ": Endereço não encontrado" },
+        { key: "ETIMEDOUT", value: ": Esgotado tempo limite da requisição" }
     ]
 }
 

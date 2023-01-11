@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/public/status/status.js"></script>
+    <script src="/public/shared.js"></script>
+    <link rel="stylesheet" href="/public/status/status.css">
+    <noscript>
+        Habilite JavaScript para execução esperada do sistema
+    </noscript>
+</head>
+<body>
+    <form action="javascript:void(0)" onsubmit="observeStatus()">
+        <span class="inputHolder">
+            <label for="targetURL">Domínio para acompanhar status</label>
+            <input id="targetURL" placeholder="https://example.com.br" type="url" required>
+        </span>
+        <button type="submit">Consultar</button>
+        <div id="loggingHolder">
+            <textarea  id="logging"></textarea>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+*
+!src/
+!src/**/*
+!.gitignore
+!package.json
+!tsconfig.json
+!.env-sample

@@ -1,0 +1,26 @@
+{
+  "name": "inspect-status",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "author": "Gabriel Magni",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch \"src/\" --exec \"ts-node src/server.ts\" -e ts"
+  },
+  "dependencies": {
+    "axios": "^1.2.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "i18n-ts": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.15",
+    "@types/nodemon": "^1.19.2",
+    "@types/typescript": "^2.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}

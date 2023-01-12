@@ -1,10 +1,10 @@
-version: "3.8"
+version: "3.3"
 services:
     nodeserver:
         build:
             context: ./
         ports:
-            - "${EXECUTION_PORT}:${EXECUTION_PORT}"
+            - "3500:3500"
     nginx:
         restart: always
         build:

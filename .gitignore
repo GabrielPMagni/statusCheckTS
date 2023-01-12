@@ -11,3 +11,5 @@
 !nginx/*
 !docker-compose.yml
 !Dockerfile
+!prisma
+!prisma/**/*

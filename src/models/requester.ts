@@ -13,43 +13,43 @@ export default class Requester {
         this.targetDomain = targetDomain;
     }
 
-    handleRequestError(err: AxiosError) {
-        console.log(err);
-        this.lastErrorCode = err.code;
-        throw new Error(this.getTranslatedLastError())
-    }
-
-    async get() {
+    protected async get() {
         return axios.get(this.targetDomain).then((result: AxiosResponse) => {
             return result;
         }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
-    async post() {
+    protected async post() {
         return axios.post(this.targetDomain).then((result: AxiosResponse) => {
             return result;
         }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
-    async put() {
+    protected async put() {
         return axios.put(this.targetDomain).then((result: AxiosResponse) => {
             return result;
         }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
-    async delete() {
+    protected async delete() {
         return axios.delete(this.targetDomain).then((result: AxiosResponse) => {
             return result;
         }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
-    async patch() {
+    protected async patch() {
         return axios.patch(this.targetDomain).then((result: AxiosResponse) => {
             return result;
         }).catch((err: AxiosError) => this.handleRequestError(err))
     }
 
-    getTranslatedLastError() {
+    private getTranslatedLastError() {
         return i18n.httpErrors.filter(item => item.key === this.lastErrorCode)[0]?.value || undefined;
+    }
+
+    private handleRequestError(err: AxiosError) {
+        console.log(err);
+        this.lastErrorCode = err.code;
+        throw new Error(this.getTranslatedLastError())
     }
 }

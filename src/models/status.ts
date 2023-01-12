@@ -14,5 +14,4 @@ export class Status extends Requester {
         }
         throw new Error(`Erro ao requisitar código de status de ${this.targetDomain}`);
     }
-    
 }

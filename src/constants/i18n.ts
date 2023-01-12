@@ -6,6 +6,7 @@ const ptBR = {
     invalidRequest: "Requisição inválida",
     unexpectedError: "Erro",
     invalidURL: "URL inválida",
+    notFound: "Dados não encontrados",
     httpErrors: [
         { key: "ENOTFOUND", value: ": Endereço não encontrado" },
         { key: "ETIMEDOUT", value: ": Esgotado tempo limite da requisição" }
